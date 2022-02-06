@@ -38,7 +38,7 @@ class ListFragment : Fragment() {
             )
         listViewModel.searchVenue.observe(viewLifecycleOwner) {
             binding.apply {
-                venueListAdapter = VenueListAdapter(it.results)
+                venueListAdapter = VenueListAdapter(it.results.filter { it.distance <= 1000 })
                 rvListVenues.adapter = venueListAdapter
                 venueListAdapter.onClick = { id, view ->
                     val bundle = Bundle().apply {

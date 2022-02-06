@@ -13,6 +13,7 @@ interface ApiService {
     @GET("places/search")
     suspend fun fetchVenue(
         @Query("near") near: String,
+        @Query("sort") sort: String = "distance",
         @Header("Authorization") header: String = "fsq3kipKDuMdd6w1L7L7DRbEh2lX1zyUq1W4s0YA6SRrLBc="
     ): Response<Venue>
 
