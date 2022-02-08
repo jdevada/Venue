@@ -43,9 +43,14 @@ data class Location(
 )
 
 data class PhotoData(
+    @SerializedName("id")
     val id: String,
+    @SerializedName("prefix")
     val prefix: String,
+    @SerializedName("suffix")
     val suffix: String,
+    @SerializedName("height")
     val height: String,
+    @SerializedName("width")
     val width: String
 )

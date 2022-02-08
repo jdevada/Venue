@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.example.venue.R
-import com.example.venue.data.di.DependencyInjector
+import com.example.venue.data.di.DependencyInjectorImpl
 import com.example.venue.data.repository.ListRepository
 import com.example.venue.databinding.FragmentListBinding
 import com.example.venue.view.viewmodel.ListViewModel
@@ -33,7 +33,7 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         listViewModel =
-            ViewModelProvider(this, ListViewFactory(DependencyInjector.listRepository)).get(
+            ViewModelProvider(this, ListViewFactory(DependencyInjectorImpl.listRepository)).get(
                 ListViewModel::class.java
             )
         listViewModel.searchVenue.observe(viewLifecycleOwner) {

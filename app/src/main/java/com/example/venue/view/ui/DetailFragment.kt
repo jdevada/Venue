@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.venue.R
-import com.example.venue.data.di.DependencyInjector
+import com.example.venue.data.di.DependencyInjectorImpl
 import com.example.venue.data.repository.DetailRepository
 import com.example.venue.databinding.FragmentDetailBinding
 import com.example.venue.view.viewmodel.DetailViewModel
@@ -48,7 +48,7 @@ class DetailFragment : Fragment() {
         detailViewModel =
             ViewModelProvider(
                 this,
-                DetailViewFactory(DependencyInjector.detailRepository)
+                DetailViewFactory(DependencyInjectorImpl.detailRepository)
             ).get(
                 DetailViewModel::class.java
             )
