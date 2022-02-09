@@ -10,36 +10,36 @@ data class Venue(
 
 data class VenueData(
     @SerializedName("name")
-    val name: String,
+    val name: String?=null,
     @SerializedName("distance")
     val distance: Long,
     @SerializedName("fsq_id")
     val id: String,
     @SerializedName("location")
-    val location: Location,
+    val location: Location?= null,
     @SerializedName("photos")
     val photos: List<PhotoData>? = null,
     @SerializedName("description")
-    val description: String,
+    val description: String?= null,
     @SerializedName("email")
     val email: String?=null,
     @SerializedName("tel")
-    val tel: String,
+    val tel: String?= null,
     @SerializedName("fax")
-    val fax: String,
+    val fax: String?= null,
     @SerializedName("website")
-    val website: String,
+    val website: String?= null,
     @SerializedName("rating")
-    val rating: String,
+    val rating: String?= null,
 )
 
 data class Location(
     @SerializedName("address")
-    val address: String,
+    val address: String?= null,
     @SerializedName("country")
-    val country: String,
+    val country: String?= null,
     @SerializedName("locality")
-    val locality: String
+    val locality: String?= null
 )
 
 data class PhotoData(

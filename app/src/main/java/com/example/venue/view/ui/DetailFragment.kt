@@ -56,16 +56,16 @@ class DetailFragment : Fragment() {
         detailViewModel.venueDetail(id)
         detailViewModel.venueDetail.observe(viewLifecycleOwner) {
             binding.apply {
-                venueName.text = it.name
-                venueDescription.text = it.description
+                venueName.text = it.name?:"No Data Available"
+                venueDescription.text = it.description?:"No Data Available"
                 venueAddress.text =
-                    "${it.location.address},\n${it.location.locality}, ${it.location.country}"
-                venueContact.text = "${it.tel}\n${it.email?:""}"
+                    "${it.location?.address?:""},\n${it.location?.locality?:""}, ${it.location?.country?:""}"
+                venueContact.text = "${it.tel?:""}\n${it.email?:"No Data Available"}"
                 it.photos?.let {
                     venuePhotoAdapter = VenuePhotoAdapter(it, requireContext())
                     rvPhotoVenues.adapter = venuePhotoAdapter
                 }
-                venueRating.text = it.rating
+                venueRating.text = it.rating?:"No Data Available"
             }
         }
     }

@@ -7,9 +7,7 @@ import com.example.venue.data.model.Result
 
 class DetailRepository constructor(
     private val dataSource: DataSource,
-    private val apiService: ApiService,
-    private val appDatabase: AppDatabase
-) {
+    private val apiService: ApiService) {
 
     suspend fun fetchDetails(id: String): Result {
 

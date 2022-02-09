@@ -15,7 +15,7 @@ class DependencyInjectorImpl {
             ListRepository(DataSource(), ApiClient.getApiService())
         }
         val detailRepository by lazy {
-            DetailRepository(DataSource(), ApiClient.getApiService(), App().getAppDataBase)
+            DetailRepository(DataSource(), ApiClient.getApiService())
         }
         fun getAppDataBase(context: Context) = AppDatabase.getInstance(context)
     }
