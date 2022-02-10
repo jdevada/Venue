@@ -4,7 +4,7 @@ import com.example.venue.data.network.ApiService
 import com.example.venue.data.network.DataSource
 import com.example.venue.data.model.Result
 
-class ListRepository constructor(
+class ListRepository(
     private val dataSource: DataSource,
     private val apiService: ApiService
 ) {
